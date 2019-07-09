@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.a5b68034.chunk.css",
-    "main.js": "/static/js/main.f07deecd.chunk.js",
-    "main.js.map": "/static/js/main.f07deecd.chunk.js.map",
-    "runtime~main.js": "/static/js/runtime~main.a8a9905a.js",
-    "runtime~main.js.map": "/static/js/runtime~main.a8a9905a.js.map",
-    "static/js/2.0723b072.chunk.js": "/static/js/2.0723b072.chunk.js",
-    "static/js/2.0723b072.chunk.js.map": "/static/js/2.0723b072.chunk.js.map",
-    "index.html": "/index.html",
-    "precache-manifest.9b1ab0f1fdd7d112c8aec527585cd9b4.js": "/precache-manifest.9b1ab0f1fdd7d112c8aec527585cd9b4.js",
-    "service-worker.js": "/service-worker.js",
-    "static/css/main.a5b68034.chunk.css.map": "/static/css/main.a5b68034.chunk.css.map"
+    "main.css": "/clicky-magee/static/css/main.a5b68034.chunk.css",
+    "main.js": "/clicky-magee/static/js/main.f07deecd.chunk.js",
+    "main.js.map": "/clicky-magee/static/js/main.f07deecd.chunk.js.map",
+    "runtime~main.js": "/clicky-magee/static/js/runtime~main.ec9f062e.js",
+    "runtime~main.js.map": "/clicky-magee/static/js/runtime~main.ec9f062e.js.map",
+    "static/js/2.0723b072.chunk.js": "/clicky-magee/static/js/2.0723b072.chunk.js",
+    "static/js/2.0723b072.chunk.js.map": "/clicky-magee/static/js/2.0723b072.chunk.js.map",
+    "index.html": "/clicky-magee/index.html",
+    "precache-manifest.67b4209cae2c89739b4ef92f43609a3f.js": "/clicky-magee/precache-manifest.67b4209cae2c89739b4ef92f43609a3f.js",
+    "service-worker.js": "/clicky-magee/service-worker.js",
+    "static/css/main.a5b68034.chunk.css.map": "/clicky-magee/static/css/main.a5b68034.chunk.css.map"
   }
 }
