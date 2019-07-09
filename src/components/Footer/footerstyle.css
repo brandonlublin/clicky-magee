@@ -1,0 +1,14 @@
+.page-footer  {
+    /* flex-shrink: 0;
+    bottom: 0; */
+    /* text-align: center; */
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: gray;
+    margin-top: 100px;
+}
+.footerMain {
+    position: relative;
+}
