@@ -11,11 +11,6 @@ function NavTabs() {
 
         <Nav className="mr-auto">
         </Nav>
-
-        <div className="nav-item score">
-            Score: 0 |
-            Highest Score: 0
-        </div>
     </Navbar>
     );
 }
