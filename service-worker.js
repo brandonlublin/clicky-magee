@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/clicky-magee/precache-manifest.17999897090672715b0a1de6957deeb5.js"
+  "/clicky-magee/precache-manifest.57f3cca3f6d6693b8df28eaa187d967f.js"
 );
 
 self.addEventListener('message', (event) => {
