@@ -11,7 +11,6 @@ import Scoreboard from './components/Scoreboard/Scoreboard';
 class App extends Component {
     constructor(props) {
         super(props);
-        
         this.state = {
             friends,
             currentScore: 0,
@@ -21,33 +20,47 @@ class App extends Component {
             clicked: []
         }
     }
+    handleReset = () => {
+        this.setState({
+            currentScore: 0,
+            topScore: this.state.topScore,
+            winlossmessage: "",
+            clicked: []
+        });
+        this.handleShuffle();
+    };
 
-    shuffleCharacters(cardsIds) {
-        for (let i = this.state.cardsIds.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [this.state.cardsIds[i], this.state.cardsIds[j]] = [this.state.cardsIds[j], this.state.cardsIds[i]];
-        }
-        return this.state.cardsIds;
-    }
+    shuffleCharacters = () => {
+        
+    };
 
     handleClick = event => {
-        let idClick = event.target.id;
-        this.state.clicked.push(idClick)
-        console.log(this.state.clicked);
-        this.shuffleCharacters(event)
+        let newClickedImage = [];
+        newClickedImage.push(event.target.id)
         this.setState ({
             currentScore: this.state.currentScore + 1,
-            winlossmessage: ""
+            winlossmessage: "",
+            clicked: newClickedImage
         });
-        console.log(this.state);
-        
+        this.checkForDup();
+        if (this.state.currentScore > this.state.topScore) {
+            this.setState({
+                topScore: this.state.currentScore
+            })
+        }
+    }
+
+    checkForDup = clicked => {
     }
 
     render() {
         return (
         <div>
             <NavBar />
-            <Scoreboard />
+            <Scoreboard
+                score={this.state.currentScore}
+                topScore={this.state.topScore}
+                winlossmessage={this.state.winlossmessage} />
             <Header />
             <Wrapper>
                 {this.state.friends.map(friend => (
