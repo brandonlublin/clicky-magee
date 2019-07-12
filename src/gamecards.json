@@ -73,10 +73,5 @@
     "id": 15,
     "name": "Statue of Liberty",
     "image": "https://images.unsplash.com/photo-1495385579954-cac26c318b8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80"
-  },
-  {
-    "id": 16,
-    "name": "France Arc",
-    "image": "https://images.unsplash.com/photo-1496546591938-b3e0375d6d1b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3316&q=80"
   }
 ]

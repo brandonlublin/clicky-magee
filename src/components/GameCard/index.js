@@ -4,7 +4,7 @@ import "./gamecardstyle.css";
 function GameCard(props) {
   return (
     <div className="card">
-      <img className='cardImage' alt={props.name} src={props.image} />
+      <img className='cardImage' alt={props.name} src={props.image} id={props.id} onClick={props.onClick}/>
     </div>
   );
 }

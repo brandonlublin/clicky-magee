@@ -4,7 +4,7 @@ import "./scoreboard.css";
 function Scoreboard(props) {
     return (
         <div className="nav-item scoreboard">
-            Score: {props.score} |
+            Score: {props.currentScore} |
             Highest Score: {props.highscore}
         </div>
     )

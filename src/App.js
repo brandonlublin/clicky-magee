@@ -8,14 +8,6 @@ import NavBar from "./components/Navbar/Nav";
 import Header from './components/Header/Header';
 import Scoreboard from './components/Scoreboard/Scoreboard';
 
-function shuffleCharacters(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
-}
-
 class App extends Component {
     constructor(props) {
         super(props);
@@ -25,26 +17,32 @@ class App extends Component {
             currentScore: 0,
             topScore: 0,
             winlossmessage: "You Lose! Try again.",
+            cardsIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
             clicked: []
         }
     }
 
-    handleShuffle = () => {
-        let shuffledFriends = shuffleCharacters(friends);
-        this.setState({ friends: shuffledFriends });
-    };
+    shuffleCharacters(cardsIds) {
+        for (let i = this.state.cardsIds.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [this.state.cardsIds[i], this.state.cardsIds[j]] = [this.state.cardsIds[j], this.state.cardsIds[i]];
+        }
+        return this.state.cardsIds;
+    }
 
-    calculateScore = () => {
-        const newScore = this.state.currentScore + 1;
+    handleClick = event => {
+        let idClick = event.target.id;
+        this.state.clicked.push(idClick)
+        console.log(this.state.clicked);
+        this.shuffleCharacters(event)
         this.setState ({
-            currentScore: newScore,
+            currentScore: this.state.currentScore + 1,
             winlossmessage: ""
         });
+        console.log(this.state);
+        
     }
 
-    handleClick = (event) => {
-    
-    }
     render() {
         return (
         <div>
