@@ -12,14 +12,35 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            friends,
+            friends: friends,
             currentScore: 0,
             topScore: 0,
             winlossmessage: "You Lose! Try again.",
-            cardsIds: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
+            imgDisplayOrder: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
             clicked: []
         }
     }
+
+    shuffle = (arr) => {
+        let j, x, i;
+        for (i = arr.length - 1; i > 0; i--) {
+            j = Math.floor(Math.random() * (i + 1));
+            x = arr[i];
+            arr[i] = arr[j];
+            arr[j] = x;
+        }
+        return arr;
+    }
+
+    rndDisplayOrder = () => {
+        let shuffleCards = this.shuffle(friends)
+        let newOrder = []
+        for (let i = 0; i < 15; i++) {
+            newOrder.push(shuffleCards[i].id)
+        }
+        this.setState({ imgDisplayOrder: newOrder })
+    }
+
     handleReset = () => {
         this.setState({
             currentScore: 0,
@@ -30,10 +51,6 @@ class App extends Component {
         this.handleShuffle();
     };
 
-    shuffleCharacters = () => {
-        
-    };
-
     handleClick = event => {
         let newClickedImage = [];
         newClickedImage.push(event.target.id)
@@ -42,15 +59,18 @@ class App extends Component {
             winlossmessage: "",
             clicked: newClickedImage
         });
-        this.checkForDup();
+        console.log(this.state.clickedImage);
+        
+        this.rndDisplayOrder();
+    }
+
+
+    setHighscore = () => {
         if (this.state.currentScore > this.state.topScore) {
             this.setState({
                 topScore: this.state.currentScore
             })
         }
-    }
-
-    checkForDup = clicked => {
     }
 
     render() {
