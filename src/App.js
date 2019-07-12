@@ -15,7 +15,7 @@ class App extends Component {
             friends: friends,
             currentScore: 0,
             topScore: 0,
-            winlossmessage: "You Lose! Try again.",
+            winLossMessage: "",
             imgDisplayOrder: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15],
             clicked: []
         }
@@ -45,43 +45,45 @@ class App extends Component {
         this.setState({
             currentScore: 0,
             topScore: this.state.topScore,
-            winlossmessage: "",
+            winLossMessage: "",
             clicked: []
         });
-        this.handleShuffle();
     };
 
     handleClick = event => {
+        this.setState({ winLossMessage: ''})
         let newClickedImage = [];
         newClickedImage.push(event.target.id)
         this.setState ({
             currentScore: this.state.currentScore + 1,
-            winlossmessage: "",
             clicked: newClickedImage
         });
-        console.log(this.state.clickedImage);
-        
-        this.rndDisplayOrder();
-    }
-
-
-    setHighscore = () => {
-        if (this.state.currentScore > this.state.topScore) {
-            this.setState({
-                topScore: this.state.currentScore
-            })
+        if (this.state.clicked.includes(event.target.id)) {
+            this.handleReset();
+            if (this.state.currentScore > this.state.topScore) {
+                this.setState({
+                    topScore: this.state.currentScore,
+                    winLossMessage: 'Nice, you set a new record!'
+                })
+            } else {
+                this.setState({
+                    topScore: this.state.topScore,
+                    winLossMessage: 'Bummer, looks like you lost. Let\'s try again.'
+                })
+            }
         }
+        this.rndDisplayOrder();
     }
 
     render() {
         return (
         <div>
             <NavBar />
+            <Header />
             <Scoreboard
                 score={this.state.currentScore}
                 topScore={this.state.topScore}
-                winlossmessage={this.state.winlossmessage} />
-            <Header />
+                winLossMessage={this.state.winLossMessage} />
             <Wrapper>
                 {this.state.friends.map(friend => (
                     <GameCard
